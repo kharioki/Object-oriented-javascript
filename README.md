@@ -16,3 +16,6 @@
   - creates a new empty object {}
   - sets a valus of 'this' to be the new empty object
   - calls the constructor method
+
+  method chaining
+  - when we return this; inside the methods, we can chain methods
