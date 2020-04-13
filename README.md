@@ -7,3 +7,12 @@
 
 - We can access object properties using the dot notation or using [square brackets]
 - we use square brackets when the prop is mutable
+
+*Classes*
+- Classes in JS are like blueprints
+- convention dictates that class names should start with a capital letter e.g class User {};
+  
+  the 'new' keyword
+  - creates a new empty object {}
+  - sets a valus of 'this' to be the new empty object
+  - calls the constructor method
