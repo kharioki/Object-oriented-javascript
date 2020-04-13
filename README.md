@@ -19,3 +19,9 @@
 
   method chaining
   - when we return this; inside the methods, we can chain methods
+
+*Prototype*
+- every object type has a prototype
+- prototype is like a map for the object type
+- __proto__ points to the prototype of the object
+- 

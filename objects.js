@@ -1,32 +1,36 @@
-// classes
+// construcors (under the hood)
+function User(email, name) {
+    this.email = email;
+    this.name = name;
+    this.online = false;
+}
 
-class User {
-    constructor(email, name) {
-        // object properties
-        this.email = email;
-        this.name = name;
-        this.score = 0;
-    }
-    // methods
-    login(){
-        console.log(this.email, 'just logged in');
-        return this;
-    }
-    logout(){
-        console.log(this.email, 'just logged out');
-        return this;
-    }
-    updateScore(){
-        this.score++;
-        console.log(this.email, 'Score is now, ', this.score);
-        return this;
-    }
-};
+User.prototype.login = function() {
+    this.online = true;
+    console.log(this.email, 'has logged in');
+}
+
+User.prototype.logout = function() {
+    this.online = false;
+    console.log(this.email, 'has logged out');
+}
+
+function Admin(...args){
+    User.apply(this, args);
+    this.role = 'super admin';
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function(u){
+    users = users.filter(user => user.email !== u.email);
+}
 
 var userOne = new User('june@ninjas.com', 'June');
 var userTwo = new User('tony@ninjas.com', 'Tony');
 
-userOne.login();
-userTwo.logout();
+var admin = new Admin('stark@ninjas.com', 'Stark');
 
-userOne.updateScore().updateScore().logout();
+var users = [userOne, userTwo, admin];
+
+console.log(users);
